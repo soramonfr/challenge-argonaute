@@ -9,7 +9,8 @@ $database = new Database();
 $crewManager = new Crew($database);
 
 $crewCounter = $crewManager->countCrew();
-var_dump($crewCounter);
+$crewMembers = $crewManager->displayCrewMembers(); 
+var_dump($crewMembers);
 
 // Mise en place de la sécurité
 

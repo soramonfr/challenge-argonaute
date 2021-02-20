@@ -52,6 +52,15 @@ require "Controllers/indexController.php";
 
         <!-- Member list -->
         <h2>Membres de l'équipage (<?= $crewCounter[0]?>/50)</h2>
+        <?php
+    if (!$crewMembers) {
+        echo "⛔ Il y a eu un problème lors de la récupération des données.";
+    } else {
+        foreach ($crewMembers as $crewMember) {
+            echo "<div></div>" . $br;
+        }
+    }
+    ?>
         <section class="member-list">
             <div class="member-item">Eleftheria</div>
             <div class="member-item">Gennadios</div>

@@ -22,9 +22,11 @@ class Crew
         return $response->execute();
     }
 
-    // public function displayCrewMember($arrayParameters) {
-
-    // }
+    public function displayCrewMembers() {
+        $response = $this->db->prepare("SELECT * FROM `crew_member`");
+        $response->execute();
+        return $response->fetchAll(PDO::FETCH_ASSOC);
+    }
 
     public function countCrew(){ 
         $response = $this->db->prepare("SELECT COUNT(*) FROM `crew_member`");

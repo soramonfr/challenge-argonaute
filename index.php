@@ -59,7 +59,7 @@ require "Controllers/indexController.php";
         } else {
             foreach ($crewMembers as $crewMember) {
                 echo "<div class=\"member-item\">" . genderIcon($crewMember["gender"]) . " " . $crewMember["firstname"] 
-                . " " . $crewMember["lastname"] . " (" . $crewMember["description"] . ")." . "</div>" . $br;
+                . " " . $crewMember["lastname"] . " (" . $crewMember["description"] . ")" . "</div>" . $br;
             }
         }
         ?>

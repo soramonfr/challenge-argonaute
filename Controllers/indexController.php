@@ -7,7 +7,6 @@ $br = "<br>";
 
 $database = new Database();
 $crewManager = new Crew($database);
-$crewMember = $crewManager->createCrewMember($arrayParameters);
 
 // Mise en place de la sécurité
 
@@ -77,6 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             "description" => $verifiedDescription
         ];
 
+        $crewMember = $crewManager->createCrewMember($arrayParameters);
         if ($crewMember) {
             $status = "✅ La saisie de l'argonaute a été traitée avec succès.";
         } else {

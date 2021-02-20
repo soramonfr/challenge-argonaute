@@ -25,9 +25,28 @@ require "Controllers/indexController.php";
     <main>
         <!-- New member form -->
         <h2>Ajouter un(e) Argonaute</h2>
-        <form class="new-member-form">
-            <label for="name">Nom de l&apos;Argonaute</label>
-            <input id="name" name="name" type="text" placeholder="Charalampos" />
+        <form class="new-member-form" action="index.php" method="post">
+        <p class="text-info"><?= isset($status) ? $status : "" ?></p>
+            <fieldset>
+                <label for="firstname">🔰 Prénom : </label><span class="error-notification"><?= isset($arrayErrors['firstname']) ? $arrayErrors['firstname'] : "" ?></span>
+                <input id="firstname" name="firstname" type="text" placeholder="Willy" />
+            </fieldset>
+            <fieldset>
+                <label for="lastname">🔰 Nom : </label><span class="error-notification"><?= isset($arrayErrors['lastname']) ? $arrayErrors['lastname'] : "" ?></span>
+                <input id="lastname" name="lastname" type="text" placeholder="Wonka" />
+            </fieldset>
+            <fieldset>
+                <label for="description">🔰 Caracteristique(s) : </label><span class="error-notification"><?= isset($arrayErrors['description']) ? $arrayErrors['description'] : "" ?></span>
+                <input id="description" name="description" type="text" placeholder="Belle, vaillante, râleuse" />
+            </fieldset>
+            <fieldset>
+                <label for="gender">🔰 Genre : </label><span class="error-notification"><?= isset($arrayErrors['gender']) ? $arrayErrors['gender'] : "" ?></span>
+                <select name="gender" id="gender-select">
+                    <option value="">--Sélectionner un genre--</option>
+                    <option value="femme">Femme</option>
+                    <option value="homme">Homme</option>
+                </select>
+            </fieldset>
             <button type="submit">Envoyer</button>
         </form>
 

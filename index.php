@@ -1,3 +1,7 @@
+<?php
+require "Controllers/indexController.php";
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 

@@ -33,4 +33,4 @@ Nous imposons très peu de contraintes au niveau technique :
 
 Idéalement, vous pouvez publier votre travail sur un dépôt GitHub, voire déployer votre application (sur Heroku, Netlify, votre propre serveur, etc.). A défaut de déployer l'application, il faudra préparer une petite démo fonctionnelle sur votre ordinateur, et avoir le code source à portée de main, en vue de l'entretien technique avec un formateur.
 
-# 2. Soumettez le lien vers votre travail en bas de cette page
+# 2. Soumettez le lien vers votre travail en bas de la page de la plateforme

@@ -9,7 +9,17 @@ $database = new Database();
 $crewManager = new Crew($database);
 
 $crewCounter = $crewManager->countCrew();
-$crewMembers = $crewManager->displayCrewMembers(); 
+$crewMembers = $crewManager->displayCrewMembers();
+
+function genderIcon($gender)
+{
+    if ($gender === "Femme") {
+        $genderIcon = "♀️";
+    } elseif ($gender === "Homme") {
+        $genderIcon = "♂️";
+    }
+    return $genderIcon;
+}
 
 // Mise en place de la sécurité
 // Initialisation du tableau d'erreurs
@@ -80,6 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $crewMember = $crewManager->createCrewMember($arrayParameters);
         if ($crewMember) {
             $status = "✅ La saisie de l'argonaute a été traitée avec succès.";
+            //  Mise à jour du compteur
             $crewCounter = $crewManager->countCrew();
         } else {
             $status = "❌ Des erreurs sont survenues pendant le traitement de la demande, veuillez recommencer.";

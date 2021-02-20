@@ -26,7 +26,7 @@ require "Controllers/indexController.php";
         <!-- New member form -->
         <h2>Ajouter un(e) Argonaute</h2>
         <form class="new-member-form" action="index.php" method="post">
-        <p class="text-info"><?= isset($status) ? $status : "" ?></p>
+            <p class="text-info"><?= isset($status) ? $status : "" ?></p>
             <fieldset>
                 <label for="firstname">🔰 Prénom : </label><span class="error-notification"><?= isset($arrayErrors['firstname']) ? $arrayErrors['firstname'] : "" ?></span>
                 <input id="firstname" name="firstname" type="text" placeholder="Willy" />
@@ -51,16 +51,16 @@ require "Controllers/indexController.php";
         </form>
 
         <!-- Member list -->
-        <h2>Membres de l'équipage (<?= $crewCounter[0]?>/50)</h2>
+        <h2>Membres de l'équipage (<?= $crewCounter[0] ?>/50)</h2>
         <?php
-    if (!$crewMembers) {
-        echo "⛔ Il y a eu un problème lors de la récupération des données.";
-    } else {
-        foreach ($crewMembers as $crewMember) {
-            echo "<div></div>" . $br;
+        if (!$crewMembers) {
+            echo "⛔ Il y a eu un problème lors de la récupération des données.";
+        } else {
+            foreach ($crewMembers as $crewMember) {
+                echo "<div>🔹 " . $crewMember["firstname"] . " " . $crewMember["lastname"] . " (" . $crewMember["description"] . ")." . "</div>" . $br;
+            }
         }
-    }
-    ?>
+        ?>
         <section class="member-list">
             <div class="member-item">Eleftheria</div>
             <div class="member-item">Gennadios</div>

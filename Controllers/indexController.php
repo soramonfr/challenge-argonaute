@@ -10,10 +10,8 @@ $crewManager = new Crew($database);
 
 $crewCounter = $crewManager->countCrew();
 $crewMembers = $crewManager->displayCrewMembers(); 
-var_dump($crewMembers);
 
 // Mise en place de la sécurité
-
 // Initialisation du tableau d'erreurs
 $arrayErrors = [];
 

@@ -43,15 +43,15 @@ require "Controllers/indexController.php";
                 <label for="gender">🔰 Genre : </label><span class="error-notification"><?= isset($arrayErrors['gender']) ? $arrayErrors['gender'] : "" ?></span>
                 <select name="gender" id="gender-select">
                     <option value="">--Sélectionner un genre--</option>
-                    <option value="femme">Femme</option>
-                    <option value="homme">Homme</option>
+                    <option value="Femme">Femme</option>
+                    <option value="Homme">Homme</option>
                 </select>
             </fieldset>
             <button type="submit">Envoyer</button>
         </form>
 
         <!-- Member list -->
-        <h2>Membres de l'équipage</h2>
+        <h2>Membres de l'équipage (<?= $crewCounter[0]?>/50)</h2>
         <section class="member-list">
             <div class="member-item">Eleftheria</div>
             <div class="member-item">Gennadios</div>

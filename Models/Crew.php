@@ -21,4 +21,14 @@ class Crew
         $response->bindValue("gender", $arrayParameters["gender"], PDO::PARAM_STR);
         return $response->execute();
     }
+
+    // public function displayCrewMember($arrayParameters) {
+
+    // }
+
+    public function countCrew(){ 
+        $response = $this->db->prepare("SELECT COUNT(*) FROM `crew_member`");
+        $response->execute();
+        return $response->fetch();
+    }
 }

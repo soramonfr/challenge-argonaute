@@ -8,6 +8,7 @@ body {
 main {
   max-width: 960px;
   margin: 0 auto;
+  padding: 2.6em;
 }
 
 header {
@@ -49,7 +50,7 @@ label {
 form fieldset {
   border: none;
   padding: 0;
-  width: 28%;
+  width: 20%;
   margin: 0 auto;
 }
 
@@ -83,12 +84,12 @@ button {
   padding: 0.5em 1em;
   border: none;
   border-radius: 6px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   margin-top: 1.5em;
 }
 
 button:hover {
   opacity: 0.9;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
 

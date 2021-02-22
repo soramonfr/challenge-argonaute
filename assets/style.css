@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 main {
@@ -25,10 +25,11 @@ header h1 {
 }
 
 footer {
-  background: 
+  background: ;
 }
 
-h1, h2 {
+h1,
+h2 {
   text-align: center;
 }
 
@@ -42,15 +43,51 @@ label {
   text-align: center;
 }
 
+form fieldset {
+  border: none;
+}
+
+/* form label {
+  text-align:
+} */
+
+label .error-notification {
+  color: #f76c6c;
+}
+
 .member-list {
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .member-item {
   padding: 0.25em 0;
   width: 33%;
+}
+
+.fa-venus {
+  color: pink;
+}
+
+.fa-mars {
+  color: #94BEE0;
+}
+
+button {
+  background-color: #f76c6c;
+  color: #fff;
+  font-size: 1em;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  margin-top: 0.5em;
+}
+
+button:hover {
+  opacity: 0.9;
+  cursor: pointer;
 }
 
 footer {

@@ -9,6 +9,7 @@ require "Controllers/indexController.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a0b1e9dec7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/style.css">
     <title>Les Argonautes</title>
 </head>
@@ -27,22 +28,22 @@ require "Controllers/indexController.php";
         <h2>Ajouter un(e) Argonaute</h2>
         <form class="new-member-form" action="index.php" method="post">
             <p class="text-info"><?= isset($status) ? $status : "" ?></p>
-            <fieldset>
-                <label for="firstname">🔰 Prénom : </label><span class="error-notification"><?= isset($arrayErrors['firstname']) ? $arrayErrors['firstname'] : "" ?></span>
+            <fieldset class="fieldset">
+                <label for="firstname">🔰 Prénom : <span class="error-notification"><?= isset($arrayErrors['firstname']) ? $arrayErrors['firstname'] : "" ?></span></label>
                 <input id="firstname" name="firstname" type="text" placeholder="Willy" />
             </fieldset>
-            <fieldset>
-                <label for="lastname">🔰 Nom : </label><span class="error-notification"><?= isset($arrayErrors['lastname']) ? $arrayErrors['lastname'] : "" ?></span>
+            <fieldset class="fieldset">
+                <label for="lastname">🔰 Nom : <span class="error-notification"><?= isset($arrayErrors['lastname']) ? $arrayErrors['lastname'] : "" ?></span></label>
                 <input id="lastname" name="lastname" type="text" placeholder="Wonka" />
             </fieldset>
-            <fieldset>
-                <label for="description">🔰 Caracteristique(s) : </label><span class="error-notification"><?= isset($arrayErrors['description']) ? $arrayErrors['description'] : "" ?></span>
+            <fieldset class="fieldset">
+                <label for="description">🔰 Caracteristique(s) : <span class="error-notification"><?= isset($arrayErrors['description']) ? $arrayErrors['description'] : "" ?></span></label>
                 <input id="description" name="description" type="text" placeholder="Belle, vaillante, râleuse" />
             </fieldset>
-            <fieldset>
-                <label for="gender">🔰 Genre : </label><span class="error-notification"><?= isset($arrayErrors['gender']) ? $arrayErrors['gender'] : "" ?></span>
+            <fieldset class="fieldset">
+                <label for="gender">🔰 Genre : <span class="error-notification"><?= isset($arrayErrors['gender']) ? $arrayErrors['gender'] : "" ?></span></label>
                 <select name="gender" id="gender-select">
-                    <option value="">--Sélectionner un genre--</option>
+                    <option value="">--Sélection du genre--</option>
                     <option value="Femme">Femme</option>
                     <option value="Homme">Homme</option>
                 </select>
@@ -53,16 +54,16 @@ require "Controllers/indexController.php";
         <!-- Member list -->
         <h2>Membres de l'équipage (<?= $crewCounter[0] ?>/50)</h2>
         <section class="member-list">
-        <?php
-        if (!$crewMembers) {
-            echo "⛔ Il y a eu un problème lors de la récupération des données.";
-        } else {
-            foreach ($crewMembers as $crewMember) {
-                echo "<div class=\"member-item\">" . genderIcon($crewMember["gender"]) . " " . $crewMember["firstname"] 
-                . " " . $crewMember["lastname"] . " (" . $crewMember["description"] . ")" . "</div>" . $br;
+            <?php
+            if (!$crewMembers) {
+                echo "⛔ Il y a eu un problème lors de la récupération des données.";
+            } else {
+                foreach ($crewMembers as $crewMember) {
+                    echo "<div class=\"member-item\">" . genderIcon($crewMember["gender"]) . " " . $crewMember["firstname"]
+                        . " " . $crewMember["lastname"] . " (" . $crewMember["description"] . ")" . "</div>" . $br;
+                }
             }
-        }
-        ?>
+            ?>
         </section>
     </main>
     <!-- Footer section -->

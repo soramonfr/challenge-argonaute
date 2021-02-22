@@ -45,7 +45,9 @@ function cleanData($var)
 
 // Affichage des données formatées
 function inputFormat($input) {
-    $input = ucfirst(strtolower($input));
+    $input = strtolower($input);
+    $input = ucfirst($input);
+    return $input;
 }
 
 // Traitement des données après envoi du formulaire
@@ -75,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         // Pour la saisie des caractéristiques 
         if (preg_match($regexDescription, $description)) {
-            $verifiedDescription = inputFormat($description);
+            $verifiedDescription = $description;
         } else {
             $arrayErrors['description'] = "Veuillez saisir une description valide.";
         }
@@ -100,8 +102,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $crewMember = $crewManager->createCrewMember($arrayParameters);
             if ($crewMember) {
                 $status = "✅ La saisie de l'argonaute a été traitée avec succès.";
-                //  Mise à jour du compteur
+                //  Mise à jour du compteur et de la liste
                 $crewCounter = $crewManager->countCrew();
+                $crewMembers = $crewManager->displayCrewMembers();
             } else {
                 $status = "❌ Ce membre a déjà été renseigné.";
             }

@@ -53,7 +53,7 @@ require "Controllers/indexController.php";
         <section class="member-list">
             <?php
             if (!$crewMembers) {
-                echo "⛔ Il y a eu un problème lors de la récupération des données.";
+                echo "⛔ Aucun membre ne fait partie de cet équipage.";
             } else {
                 foreach ($crewMembers as $crewMember) {
                     echo "<div class=\"member-item\">" . genderIcon($crewMember["gender"]) . " " . $crewMember["firstname"]

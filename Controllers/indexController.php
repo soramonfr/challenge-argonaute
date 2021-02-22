@@ -43,12 +43,15 @@ function cleanData($var)
     return $var;
 }
 
-var_dump(($crewCounter[0]));
+// Affichage des données formatées
+function inputFormat($input) {
+    $input = ucfirst(strtolower($input));
+}
 
 // Traitement des données après envoi du formulaire
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Vérification du nombre de personnes présentes dans l'équipage (On en veut 50) puis traitement
-    if ($crewCounter[0] >= 50) {
+    if (intval($crewCounter[0]) >= 50) {
         $status = "L'équipage est déjà au complet";
     } else {
         // Application du premier filtre de sécurité
@@ -66,20 +69,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         // Pour la saisie du prénom
         if (preg_match($regexName, $firstname)) {
-            $verifiedFirstname = ucfirst(strtolower($firstname));
+            $verifiedFirstname = inputFormat($firstname);
         } else {
             $arrayErrors['firstname'] = "Veuillez saisir un prénom valide.";
         }
         // Pour la saisie des caractéristiques 
         if (preg_match($regexDescription, $description)) {
-            $verifiedDescription = $description;
+            $verifiedDescription = inputFormat($description);
         } else {
             $arrayErrors['description'] = "Veuillez saisir une description valide.";
         }
         // Pour la sélection du genre
         $validGender = array("Femme", "Homme");
         if (in_array($gender, $validGender)) {
-            $verifiedGender = $gender;
+            $verifiedGender = inputFormat($gender);
         } else {
             $arrayErrors['gender'] = "Veuillez saisir un genre.";
         }

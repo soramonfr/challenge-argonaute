@@ -33,7 +33,7 @@ require "Controllers/indexController.php";
                 <input id="firstname" name="firstname" type="text" placeholder="Willy" />
             </fieldset>
             <fieldset class="fieldset">
-                <label for="lastname">🔰 Nom : <span class="error-notification"><?= isset($arrayErrors['lastname']) ? $arrayErrors['lastname'] : "" ?></span></label>
+                <label for="lastname">🔰 Fils ou Fille de : <span class="error-notification"><?= isset($arrayErrors['lastname']) ? $arrayErrors['lastname'] : "" ?></span></label>
                 <input id="lastname" name="lastname" type="text" placeholder="Wonka" />
             </fieldset>
             <fieldset class="fieldset">
@@ -60,7 +60,7 @@ require "Controllers/indexController.php";
             } else {
                 foreach ($crewMembers as $crewMember) {
                     echo "<div class=\"member-item\">" . genderIcon($crewMember["gender"]) . " " . $crewMember["firstname"]
-                        . " " . $crewMember["lastname"] . " (" . $crewMember["description"] . ")" . "</div>" . $br;
+                        . " (" . $crewMember["description"] . ")" . "</div>" . $br;
                 }
             }
             ?>

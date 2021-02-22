@@ -24,13 +24,14 @@ header h1 {
   font-size: 2.5em;
 }
 
-footer {
-  background: ;
-}
-
 h1,
 h2 {
   text-align: center;
+}
+
+/* Form section */
+form .text-info {
+  color: #94BEE0;
 }
 
 label {
@@ -46,10 +47,6 @@ label {
 form fieldset {
   border: none;
 }
-
-/* form label {
-  text-align:
-} */
 
 label .error-notification {
   color: #f76c6c;
@@ -90,6 +87,7 @@ button:hover {
   cursor: pointer;
 }
 
+/* Footer section */
 footer {
   margin-top: 2em;
   text-align: center;

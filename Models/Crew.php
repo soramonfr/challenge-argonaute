@@ -24,7 +24,6 @@ class Crew
         } catch (PDOException $exception) {
             return false;
         }
-
     }
 
     public function displayCrewMembers() {

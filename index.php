@@ -30,23 +30,20 @@ require "Controllers/indexController.php";
             <p class="text-info"><?= isset($status) ? $status : "" ?></p>
             <fieldset class="fieldset">
                 <label for="firstname">🔰 Prénom : <span class="error-notification"><?= isset($arrayErrors['firstname']) ? $arrayErrors['firstname'] : "" ?></span></label>
-                <input id="firstname" name="firstname" type="text" placeholder="Willy" />
-            </fieldset>
-            <fieldset class="fieldset">
+                <input id="firstname" name="firstname" type="text" placeholder="Willy" /><br>
+
                 <label for="lastname">🔰 Fils ou Fille de : <span class="error-notification"><?= isset($arrayErrors['lastname']) ? $arrayErrors['lastname'] : "" ?></span></label>
-                <input id="lastname" name="lastname" type="text" placeholder="Wonka" />
-            </fieldset>
-            <fieldset class="fieldset">
+                <input id="lastname" name="lastname" type="text" placeholder="Wonka" /><br>
+
                 <label for="description">🔰 Caracteristique(s) : <span class="error-notification"><?= isset($arrayErrors['description']) ? $arrayErrors['description'] : "" ?></span></label>
-                <input id="description" name="description" type="text" placeholder="Belle, vaillante, râleuse" />
-            </fieldset>
-            <fieldset class="fieldset">
+                <input id="description" name="description" type="text" placeholder="Gourmand, espiègle" /><br>
+
                 <label for="gender">🔰 Genre : <span class="error-notification"><?= isset($arrayErrors['gender']) ? $arrayErrors['gender'] : "" ?></span></label>
                 <select name="gender" id="gender-select">
                     <option value="">--Sélection du genre--</option>
                     <option value="Femme">Femme</option>
                     <option value="Homme">Homme</option>
-                </select>
+                </select><br>
             </fieldset>
             <button type="submit">Envoyer</button>
         </form>

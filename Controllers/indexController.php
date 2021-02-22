@@ -26,11 +26,11 @@ function genderIcon($gender)
 $arrayErrors = [];
 
 // Génération des regex
-// Pour la saisie d'un nom ou prénom
-$regexName = "/^[a-zA-Zéèäëïçõãê -]+$/";
+// Pour la saisie d'un nom ou prénom (max 25 char)
+$regexName = "/^[a-zA-Zéèäëïçõãê -]{1,25}$/";
 
-// Pour la saisie d'un ou plusieurs adjectifs
-$regexDescription = "/^[a-zA-Zéèäëïçõãê -,]+$/";
+// Pour la saisie d'un ou plusieurs adjectifs (max 25 char)
+$regexDescription = "/^[a-zA-Zéèäëïçõãê -,]{1,25}$/";
 
 // Filtrage des données potentiellement dangereuses
 // htmlspecialchars() va permettre d’échapper certains caractères spéciaux comme les chevrons « < » et « > » en les transformant en entités HTML.
@@ -41,13 +41,6 @@ function cleanData($var)
     $var = stripslashes($var);
     $var = htmlspecialchars($var);
     return $var;
-}
-
-// Affichage des données formatées
-function inputFormat($input) {
-    $input = strtolower($input);
-    $input = ucfirst($input);
-    return $input;
 }
 
 // Traitement des données après envoi du formulaire
@@ -65,13 +58,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Application du second filtre de sécurité
         // Pour la saisie du nom
         if (preg_match($regexName, $lastname)) {
-            $verifiedLastname = mb_strtoupper($lastname);
+            $verifiedLastname = $lastname;
         } else {
             $arrayErrors['lastname'] = "Veuillez saisir un nom valide.";
         }
         // Pour la saisie du prénom
         if (preg_match($regexName, $firstname)) {
-            $verifiedFirstname = inputFormat($firstname);
+            $verifiedFirstname = $firstname;
         } else {
             $arrayErrors['firstname'] = "Veuillez saisir un prénom valide.";
         }
@@ -84,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Pour la sélection du genre
         $validGender = array("Femme", "Homme");
         if (in_array($gender, $validGender)) {
-            $verifiedGender = inputFormat($gender);
+            $verifiedGender = $gender;
         } else {
             $arrayErrors['gender'] = "Veuillez saisir un genre.";
         }

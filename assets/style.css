@@ -31,12 +31,14 @@ h2 {
 
 /* Form section */
 form .text-info {
-  color: #94BEE0;
+  color: #94bee0;
 }
 
 label {
   display: block;
   margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  text-align: left;
 }
 
 .new-member-form {
@@ -46,6 +48,9 @@ label {
 
 form fieldset {
   border: none;
+  padding: 0;
+  width: 28%;
+  margin: 0 auto;
 }
 
 label .error-notification {
@@ -68,7 +73,7 @@ label .error-notification {
 }
 
 .fa-mars {
-  color: #94BEE0;
+  color: #94bee0;
 }
 
 button {
@@ -79,7 +84,7 @@ button {
   border: none;
   border-radius: 6px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-  margin-top: 0.5em;
+  margin-top: 1.5em;
 }
 
 button:hover {

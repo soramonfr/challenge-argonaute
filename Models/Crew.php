@@ -12,6 +12,7 @@ class Crew
         $this->db = $database->getDb();
     }
 
+    // Saisie d'un(e) argonaute
     public function createCrewMember($arrayParameters)
     { 
         try {
@@ -26,12 +27,14 @@ class Crew
         }
     }
 
+    // Affichage des argonautes
     public function displayCrewMembers() {
         $response = $this->db->prepare("SELECT * FROM `crew_member`");
         $response->execute();
         return $response->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    // Comptage des argonautes
     public function countCrew(){ 
         $response = $this->db->prepare("SELECT COUNT(*) FROM `crew_member`");
         $response->execute();

@@ -1,4 +1,5 @@
 <?php
+setlocale(LC_ALL, "fr.UTF-8");
 spl_autoload_register(function ($class) {
     include 'models/' . $class . '.php';
 });
@@ -43,6 +44,13 @@ function cleanData($var)
     return $var;
 }
 
+// Affichage des données formatées
+function inputFormat($input) {
+    $input = strtolower($input);
+    $input = ucfirst($input);
+    return $input;
+}
+
 // Traitement des données après envoi du formulaire
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Vérification du nombre de personnes présentes dans l'équipage (On en veut 50) puis traitement
@@ -58,26 +66,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Application du second filtre de sécurité
         // Pour la saisie du nom
         if (preg_match($regexName, $lastname)) {
-            $verifiedLastname = $lastname;
+            $verifiedLastname = inputFormat($lastname);
         } else {
             $arrayErrors['lastname'] = "Veuillez saisir un nom valide.";
         }
         // Pour la saisie du prénom
         if (preg_match($regexName, $firstname)) {
-            $verifiedFirstname = $firstname;
+            $verifiedFirstname = inputFormat($firstname);
         } else {
             $arrayErrors['firstname'] = "Veuillez saisir un prénom valide.";
         }
         // Pour la saisie des caractéristiques 
         if (preg_match($regexDescription, $description)) {
-            $verifiedDescription = $description;
+            $verifiedDescription = inputFormat($description);
         } else {
             $arrayErrors['description'] = "Veuillez saisir une description valide.";
         }
         // Pour la sélection du genre
         $validGender = array("Femme", "Homme");
         if (in_array($gender, $validGender)) {
-            $verifiedGender = $gender;
+            $verifiedGender = inputFormat($gender);
         } else {
             $arrayErrors['gender'] = "Veuillez saisir un genre.";
         }
